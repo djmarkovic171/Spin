@@ -1,0 +1,753 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+@font-face{
+    src: url('../fonts/Heebo-Regular.ttf');
+    font-family: main;
+}
+
+$f: flex;
+$sa: space-around;
+$sb: space-between;
+$co: column;
+$c: center;
+$fw: wrap;
+
+
+$rez1: 1200px;
+$rez2: 992px;
+$rez3: 768px;
+$rez4: 576px;
+$rez5: 480px;
+$rez6: 370px;
+
+@mixin rez1 {
+    @media (max-width: #{$rez1}){
+        @content;
+    }
+}
+
+@mixin rez2 {
+    @media (max-width: #{$rez2}){
+        @content;
+    }
+}
+
+
+@mixin rez3 {
+    @media (max-width: #{$rez3}){
+        @content;
+    }
+}
+
+@mixin rez4 {
+    @media (max-width: #{$rez4}){
+        @content;
+    }
+}
+
+@mixin rez5 {
+    @media (max-width: #{$rez5}){
+        @content;
+    }
+}
+
+@mixin rez6 {
+    @media (max-width: #{$rez6}){
+        @content;
+    }
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: main;
+    background-color: whitesmoke;
+    position: relative;
+
+    .goTop{
+        width: 60px;
+        height: 60px;
+        position: fixed;
+        bottom: 1%;
+        right: 1%;
+        z-index: 998;
+        
+        a{
+            font-size: 2em;
+            transition: 0.6s;
+            color: rgb(82, 169, 240);
+
+            &:hover{
+                color: cyan;
+            }
+        }
+    }
+
+    .mainNav{
+        position: fixed;
+        top: 0;
+        z-index: 998;
+
+        .logo{
+            padding-left: 40px;
+            text-decoration: none;
+            transition: .7s;
+
+            @include rez2{
+                padding-left: 0px;
+            }
+
+            @include rez4{
+                font-size: 1.7em;
+            }
+
+            @include rez6{
+                font-size: 1.5em;
+            }
+            
+
+            &:hover{
+                color: cyan;
+            }
+
+            span{
+                font-family: 'Righteous', cursive;
+            }
+        }
+
+        .right{
+            margin-right: 40px;
+
+            li{
+
+                .modal{
+                    background: rgb(55, 158, 199);
+
+                    form{
+                        width: 80%;
+                        margin: 0px auto;
+
+                        p{
+                            font-size: 2em;
+                            text-align: $c;
+                            padding-top: 4%;
+                        }
+
+                        .subForm{
+                            width: 30%;
+                            display: block;
+                            margin: 0px auto;
+                            background-color: rgb(20, 190, 190);
+
+                            &:hover{
+                                background-color: rgb(143, 218, 218);
+                            }
+                        }
+
+                        label:last-child{
+                            top: -20px;
+                        }
+
+                        /* label color */
+   .input-field label {
+    color: rgb(248, 248, 248);
+  }
+  /* label focus color */
+  .input-field input[type=text]:focus + label {
+    color: rgb(88, 226, 215);
+  }
+  /* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid rgb(30, 203, 247);
+    box-shadow: 0 1px 0 0 rgb(65, 156, 231);
+  }
+  /* valid color */
+  .input-field input[type=text].valid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* invalid color */
+  .input-field input[type=text].invalid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* icon prefix focus color */
+  .input-field .prefix.active {
+    color: rgb(137, 218, 243);
+  }
+                    }
+                }
+
+                a{
+                    text-decoration: none;
+                    font-family: main;
+                    font-weight: bold;
+                    transition: .7s;
+                    font-size: 1.3em;
+
+                    &:hover{
+                        color: cyan;
+                    }
+                }
+            }
+        }
+    }
+
+    .sidenav1{
+        background-color: aqua;
+        padding-top: 3%;
+
+        li{
+
+            a{
+                    text-decoration: none;
+                    font-family: main;
+                    font-weight: bold;
+                    transition: .7s;
+
+                    &:hover{
+                        transition: .7s;
+                    }
+            }
+        }
+
+    }
+
+    main{
+        width: 100%;
+        height: 100vh;
+        background-image: url('../images/main.jpeg');
+        background-size: cover;
+        background-position: $c;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        .firstFade{
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0,0,0,.4);
+            display: $f;
+            justify-content: $c;
+            align-items: $c;
+            flex-direction: $co;
+            
+            h1{
+                font-family: main;
+                color: whitesmoke;
+                font-size: 3.5em;
+
+                @include rez5{
+                    font-size: 2.7em;
+                }
+
+                span{
+                    font-family: 'Righteous', cursive;
+                }
+            }
+
+            a{
+                color: rgb(82, 218, 228);
+                font-size: 3em;
+                text-decoration: none;
+                transition: .7s;
+
+                &:hover{
+                    transform: translateY(15px);
+                }
+            }
+        }
+    }
+
+    .section1{
+        width: 100%;
+        margin: 5% 0%;
+
+        @include rez3{
+            margin: 10% 0% 15% 0%;
+        }
+
+        .container1{
+
+            .row1{
+                display: $f;
+
+                .col1{
+                    display: $f;
+                    justify-content: $c;
+                    align-items: $c;
+                    flex-direction: $co;
+
+                    @include rez3{
+                        margin-bottom: 5%;
+                    }
+
+                    h2{
+                        color: rgb(87, 240, 240);
+                        font-family: main;
+                        font-weight: bold;
+                        font-size: 2.5em;
+                        padding-bottom: 5%;
+                    }
+
+                    p{
+                        font-family: main;
+                        text-align: justify;
+                        letter-spacing: 3px;
+                        font-size: 1.5em;
+
+                        @include rez2{
+                            font-size: 1.1em;
+                            font-weight: bold;
+                            text-align: $c;
+                        }
+
+                        @include rez5{
+                            font-size: 0.9em;
+                            text-align: justify;
+                        }
+                    }
+
+                    .speci{
+                        text-align: $c;
+                    }
+                }
+
+                .col12{
+                    display: $f;
+                    justify-content: flex-end;
+                    align-items: $c;
+
+                    .picture1{
+                        display: $f;
+                        justify-content: flex-end;
+                        align-items: $c;
+
+                        @include rez3{
+                            justify-content: $c;
+                        }
+
+                        img{
+                            width: 95%;
+                            max-width: 100%;
+                            height: auto;
+
+                            @include rez3{
+                                width: 80%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .rowRev{
+                display: $f;
+
+                .colRev{
+
+                    @include rez3{
+                        order: 2;
+                    }
+                }
+            }
+        }
+    }
+
+    .carousel1{
+        
+        .heading1{
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 2px 2px blue;
+            font-family: main;
+        }
+
+        .par1{
+            font-size: 1.8em;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px rgb(67, 176, 226);
+            font-family: main;
+            letter-spacing: 3px;
+        }
+    }
+
+    .section2{
+        width: 100%;
+        display: $f;
+        justify-content: $c;
+        align-items: $c;
+        flex-direction: $co;
+
+        h2{
+            font-family: main;
+            font-size: 3em;
+            padding-bottom: 5%;
+
+            @include rez6{
+                font-size: 2.5em;
+            }
+        }
+
+        iframe{
+            width: 100%;
+            height: 300px;
+        }
+    }
+
+    .footer{
+        width: 100%;
+        background-color: whitesmoke;
+        padding: 5% 0%;
+        border-top: 3px solid rgb(62, 226, 238);
+        margin-top: 5%;
+
+        @include rez5{
+            margin-top: 13%;
+            padding-top: 15%;
+        }
+
+        .containerFooter{
+
+            .rowFooter{
+                display: $f;
+
+                .colFooter{
+                    display: $f;
+                    flex-direction: $co;
+                    justify-content: $c;
+                    align-items: $c;
+
+                    p{
+                        font-family: main;
+                        font-size: 2.4em;
+                        color: rgb(83, 214, 214);
+                        padding-bottom: 5%;
+                    }
+
+                    form{
+                        width: 80%;
+
+                        .subForm{
+                            width: 30%;
+                            display: block;
+                            margin: 0px auto;
+                            background-color: rgb(20, 190, 190);
+
+                            @include rez5{
+                                width: 50%;
+                            }
+
+                            &:hover{
+                                background-color: rgb(143, 218, 218);
+                            }
+                        }
+                    }
+                }
+
+                .colFooter1{
+                    display: $f;
+                    justify-content: $c;
+                    align-items: $c;
+                    flex-direction: $co;
+
+                    @include rez2{
+                        margin-top: 10%;
+                    }
+
+                    @include rez5{
+                        margin-top: 20%;
+                    }
+
+                    p:first-child{
+                        font-size: 2em;
+                        font-family: main;
+                        color: rgb(82, 206, 206);
+                    }
+
+                    ul{
+                        display: $f;
+                        justify-content: $sa;
+                        width: 90%;
+                        margin: 8% 0%;
+
+                        @include rez5{
+                            flex-direction: $co;
+                            align-items: $c;
+                        }
+
+                        li{
+
+                            @include rez5{
+                                margin: 3% 0%;
+                            }
+
+                            a{
+                                text-decoration: none;
+                                font-family: main;
+                                color: rgb(67, 175, 207);
+                                font-size: 1.3em;
+                                transition: 0.6s;
+
+                                &:hover{
+                                    color: rgb(47, 100, 160);
+                                }
+                            }
+                        }
+                    }
+
+                    p:nth-of-type(2){
+                        font-size: 2em;
+                        font-family: main;
+                        color: rgb(82, 206, 206);
+                    }
+
+                    p:last-child{
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+    }
+
+    /* label color */
+   .input-field label {
+    color: rgb(73, 183, 187);
+  }
+  /* label focus color */
+  .input-field input[type=text]:focus + label {
+    color: rgb(88, 226, 215);
+  }
+  /* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid rgb(58, 170, 170);
+    box-shadow: 0 1px 0 0 rgb(65, 156, 231);
+  }
+  /* valid color */
+  .input-field input[type=text].valid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* invalid color */
+  .input-field input[type=text].invalid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* icon prefix focus color */
+  .input-field .prefix.active {
+    color: rgb(80, 191, 224);
+  }
+}
+
+
+// Gallery start
+
+body{
+
+    .fluidGallery{
+        margin: 10% 0%;
+
+        @include rez2{
+            margin: 15% 0%;
+        }
+
+        @include rez4{
+            margin: 25% 0%;
+        }
+
+        h1{
+            text-align: $c;
+            font-family: main;
+            font-size: 3em;
+            font-weight: bold;
+
+            @include rez2{
+                padding-bottom: 5%;
+            }
+
+            @include rez4{
+                font-size: 2.5em;
+            }
+
+            @include rez5{
+                font-size: 2em;
+            }
+
+            @include rez6{
+                font-size: 1.5em;
+            }
+        }
+
+        .contGallery{
+
+            .rowGallery{
+                margin: 15% 0%;
+                
+                @include rez2{
+                    margin: 0%;
+                }
+
+                .colGallery{
+
+                    @include rez2{
+                        margin: 3% 0%;
+                    }
+
+                    img{
+                        max-width: 100%;
+                        height: auto;
+
+                        @include rez4{
+                            width: 70%;
+                            display: block;
+                            margin: 0px auto;
+                        }
+
+                        @include rez6{
+                            width: 90%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Author start
+
+body{
+
+    .fluidAuthor{
+        margin: 15% 0%;
+
+        @include rez5{
+            margin: 25% 0%;
+        }
+
+        @include rez6{
+            margin: 35% 0%;
+        }
+
+        .contAuthor{
+
+            .rowAuthor{
+
+                .colAuthor{
+                    display: $f;
+                    flex-direction: $co;
+                    justify-content: $c;
+                    align-items: $c;
+
+                    @include rez3{
+                        margin-bottom: 10%;
+                    }
+
+                    h1{
+                        font-family: main;
+                        font-weight: bold;
+                        padding-bottom: 8%;
+                    }
+
+                    p{
+                        line-height: 40px;
+                        font-family: main;
+                        font-weight: bold;
+                        text-shadow: 2px 2px rgb(195, 202, 202);
+                        text-align: justify;
+
+                        @include rez1{
+                            font-size: 1.4em;
+                        }
+
+                        @include rez2{
+                            font-size: 1.1em;
+                        }
+
+                        @include rez3{
+                            text-align: $c;
+                        }
+
+                        @include rez4{
+                            font-size: 1em;
+                            line-height: 30px;
+                        }
+
+                        @include rez6{
+                            font-size: 0.9em;
+                        }
+                    }
+
+                    .social{
+                        width: 25%;
+                        display: $f;
+                        justify-content: $sa;
+                        align-items: $c;
+
+                        @include rez5{
+                            width: 40%;
+                        }
+
+                        a{
+                            font-size: 1.7em;
+                            color: rgb(72, 211, 211);
+                            transition: 1s;
+
+                            &:hover{
+                                color: rgb(57, 172, 238);
+                            }
+                        }
+                    }
+
+                    a{
+                        text-decoration: none;
+                        font-size: 1.4em;
+                        font-family: main;
+                        color: rgb(58, 132, 228);
+                        transition: 1s;
+
+                        &:hover{
+                            color: darken(rgb(58, 132, 228), 20%);
+                        }
+                    }
+                }
+
+                .colAuthor1{
+                    display: $f;
+                    justify-content: $c;
+                    align-items: $c;
+
+                    img{
+                        max-width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(10, 233, 233);
+    border-radius: 30px; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: darken(cyan,20%);
+    border-radius: 30px;  
+  }

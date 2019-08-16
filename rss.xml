@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>Aqua Park Spin | Home</title>
+  <link>index.html</link>
+  <description>Welcome to Aqua Park Spin. Get ready to dive into the world of unlimited fun and pure water !</description>
+  <item>
+    <title>Aqua Park Spin | Gallery</title>
+    <link>gallery.html</link>
+    <description>See all pictures of our aqua park and asure yourself of his beauty !</description>
+  </item>
+  <item>
+    <title>Aqua Park Spin | About</title>
+    <link>about.html</link>
+    <description>Learn more about author of this website and also of Aqua Park Spin itself !</description>
+  </item>
+  
+</channel>
+
+</rss>
